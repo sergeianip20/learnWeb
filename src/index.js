@@ -1,12 +1,15 @@
-import _ from 'lodash';
+import { cube } from './math.js';
 import printMe from './print.js';
 import './styles.css';
 
 function component() {
-  const element = document.createElement('div');
+    const element = document.createElement('pre');
   const btn = document.createElement('button');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = [
+    'Hello webpack!',
+    '5 cubed is equal to ' + cube(5)
+  ].join('\n\n');
 
   btn.innerHTML = 'Click me and check the console!';
   btn.onclick = printMe;  // onclick event is bind to the original printMe function
