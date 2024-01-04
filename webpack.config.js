@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { Template } = require('webpack');
 
-module.exports = ()=>{
+module.exports = (env)=>{
   return {
     entry: {
       app: './src/index.js',
@@ -20,16 +21,14 @@ module.exports = ()=>{
      ],
    },
     plugins: [
-      new HtmlWebpackPlugin({
-        title: 'Hot Module Replacement',
-      }),
+      new HtmlWebpackPlugin(    {template: path.resolve(_s_dirname, 'public', 'index.html')}),
     ],
     output: {
       filename: '[name].[contenthash].js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
     },
-    mode: 'development',
+    mode: env.mode ?? 'development',
    optimization: {
      usedExports: true,
    },
