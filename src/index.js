@@ -11,10 +11,7 @@ function component() {
     '5 cubed is equal to ' + cube(5)
   ].join('\n\n');
 
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;  // onclick event is bind to the original printMe function
-
-  element.appendChild(btn);
+  
 
   return element;
 }
