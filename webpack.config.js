@@ -5,21 +5,25 @@ const { Template, ProgressPlugin } = require('webpack');
 module.exports = (env)=>{
   return {
     entry: {
-      app: './src/index.js',
+      app: './src/index.ts',
     },
     devtool: 'inline-source-map',
     devServer: {
       static: './dist',
       hot: true,
     },
-   module: {
-     rules: [
-       {
-         test: /\.css$/,
-         use: ['style-loader', 'css-loader'],
-       },
-     ],
-   },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
+    },
     plugins: [
       new HtmlWebpackPlugin(    {template: path.resolve(__dirname, 'public', 'index.html')}),
       new ProgressPlugin(),

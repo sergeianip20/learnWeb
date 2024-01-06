@@ -1,6 +1,6 @@
-import { square } from './math.js';
+import { square } from './math';
 import printMe from './print.js';
-import './styles.css';
+
 
 function component() {
     const element = document.createElement('pre');
