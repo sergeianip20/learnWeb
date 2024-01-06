@@ -1,6 +1,6 @@
-import { square } from './math.js';
+import { square } from './math';
 import printMe from './print.js';
-import './styles.css';
+
 
 function component() {
     const element = document.createElement('pre');
@@ -8,7 +8,7 @@ function component() {
 
   element.innerHTML = [
     'Hello webpack!',
-    '5 cubed is equal to ' + square(5, 5)
+    '5 cubed is equal to ' 
   ].join('\n\n');
 
   
