@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { Template } = require('webpack');
+const { Template, ProgressPlugin } = require('webpack');
 
 module.exports = (env)=>{
   return {
@@ -21,7 +21,8 @@ module.exports = (env)=>{
      ],
    },
     plugins: [
-      new HtmlWebpackPlugin(    {template: path.resolve(_s_dirname, 'public', 'index.html')}),
+      new HtmlWebpackPlugin(    {template: path.resolve(__dirname, 'public', 'index.html')}),
+      new ProgressPlugin(),
     ],
     output: {
       filename: '[name].[contenthash].js',
