@@ -13,7 +13,7 @@ export default  (env: EnrVariables)=>{
   const isDev = env.mode === 'development'
   const config: webpack.Configuration = { 
     entry: {
-    app: './src/index.ts',
+    app: './src/index.tsx',
   },
   devtool: isDev ? 'inline-source-map': false ,
   devServer: isDev ?  {
