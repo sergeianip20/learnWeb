@@ -1,19 +1,14 @@
-import { square } from './math';
-import printMe from './print.js';
+//import React from 'react'
+import {createRoot} from 'react-dom/client'
+import {App} from './components/App'
+
+const root = document.getElementById('root')
 
 
-function component() {
-    const element = document.createElement('pre');
-  const btn = document.createElement('button');
-
-  element.innerHTML = [
-    'Hello webpack!',
-    '5 cubed is equal to ' + square(5, 5)
-  ].join('\n\n');
-
-  
-
-  return element;
+if(!root){
+  throw new Error('root not found')
 }
 
+const container = createRoot(root)
 
+container.render(<App />)
